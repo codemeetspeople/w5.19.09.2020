@@ -15,7 +15,7 @@ def my_range(*args):
             start, finish, step = int(args[0]), int(args[1]), int(args[2])
     except (ValueError, TypeError) as e:
         raise TypeError(
-            f'my_range support only integer argumets type'
+            f'my_range support only integer arguments type'
         )
 
     if step == 0:
