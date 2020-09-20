@@ -1,3 +1,4 @@
+from typing import Any
 from math import hypot
 
 
@@ -5,7 +6,7 @@ class Point:
     __slots__ = ['_x', '_y']
 
     @staticmethod
-    def _validate(value):
+    def _validate(value: float) -> float:
         try:
             return float(value)
         except (TypeError, ValueError):
@@ -21,10 +22,12 @@ class Point:
     def __repr__(self):
         return f'({self.x}, {self.y})'
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
+        if not isinstance(other, self.__class__):
+            return NotImplemented
         return self.x == other.x and self.y == other.y
 
-    def __ne__(self, other):
+    def __ne__(self, other: Any) -> bool:
         return not self == other
 
     @property
@@ -43,5 +46,7 @@ class Point:
     def y(self, value):
         self._y = self._validate(value)
 
-    def distance(self, other):
+    def distance(self, other: Any) -> float:
+        if not isinstance(other, self.__class__):
+            raise TypeError('Argument should be Point type')
         return hypot(self.x - other.x, self.y - other.y)

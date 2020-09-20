@@ -1,18 +1,19 @@
+from typing import List, Callable
 from functools import reduce
 
-
+IntList = List[int]
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-def my_sum(x, y):
+def my_sum(x: int, y: int) -> int:
     return x + y
 
 
-def multiply(x, y):
+def multiply(x: int, y: int) -> int:
     return x * y
 
 
-def wrapper(func, sequence):
+def wrapper(func: Callable, sequence: IntList) -> int:
     result = sequence[0]
 
     for elem in sequence[1:]:
