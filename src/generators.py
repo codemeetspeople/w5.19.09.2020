@@ -36,22 +36,23 @@ def my_range(*args):
             start += step
 
 
-print('---- my_range(5) -----')
-for i in my_range(5):
-    print(i)
-print()
+if __name__ == '__main__':  # pragma: no cover
+    print('---- my_range(5) -----')
+    for i in my_range(5):
+        print(i)
+    print()
 
-print('---- my_range(5, 10) -----')
-for i in my_range(5, 10):
-    print(i)
-print()
+    print('---- my_range(5, 10) -----')
+    for i in my_range(5, 10):
+        print(i)
+    print()
 
-print('---- my_range(1, 10, 2) -----')
-for i in my_range(1, 10, 2):
-    print(i)
-print()
+    print('---- my_range(1, 10, 2) -----')
+    for i in my_range(1, 10, 2):
+        print(i)
+    print()
 
-print('---- my_range(10, 0, -2) -----')
-for i in my_range(10, 0, -2):
-    print(i)
-print()
+    print('---- my_range(10, 0, -2) -----')
+    for i in my_range(10, 0, -2):
+        print(i)
+    print()
