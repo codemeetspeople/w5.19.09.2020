@@ -57,3 +57,4 @@ class Book:
         else:
             cursor.execute(UPDATE_STATEMENT, (self.author, self.title, self.id))
         self.conn.commit()
+        self._changed = False
